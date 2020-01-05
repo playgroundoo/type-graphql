@@ -9,6 +9,9 @@ export class Project {
   @Column({ comment: '프로젝트명' })
   public name: string;
 
+  @Column({ comment: '썸네일'})
+  public thumbnail: string;
+
   @CreateDateColumn()
   public reg_date: Date;
 

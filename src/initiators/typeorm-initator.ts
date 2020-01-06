@@ -11,8 +11,10 @@ export default () =>
     password: process.env.DB_PASSWORD,
     username: process.env.DB_USER,
     entities: [
-      entities.Project
+      entities.Project,
+      entities.Image,
+      entities.ImageSource
     ],
     synchronize: true,
-    logging: true
+    // logging: true
   })

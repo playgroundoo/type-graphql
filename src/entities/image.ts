@@ -5,7 +5,7 @@ import { ImageSource } from './image-source';
 
 @Entity()
 @ObjectType()
-export class Image{
+export class Image {
   
   @PrimaryColumn()
   @Field(type => ID)
@@ -22,5 +22,5 @@ export class Image{
   @OneToMany(type => ImageSource, imageSource => imageSource.image)
   @Field((type) => [ ImageSource ])
   public imageSources: ImageSource[];
-  
+
 }

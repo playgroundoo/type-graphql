@@ -4,7 +4,7 @@ import { Image } from './image';
 
 @Entity()
 @ObjectType()
-export class ImageSource{
+export class ImageSource {
   
   @PrimaryColumn()
   @Field(type => ID)

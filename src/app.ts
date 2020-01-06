@@ -4,7 +4,6 @@ import express from 'express';
 import cors from 'cors';
 import { initRepository } from './Initiators';
 
-
 export default () => {
   const app = express();
   app.use(express.json());

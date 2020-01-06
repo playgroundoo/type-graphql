@@ -9,11 +9,10 @@ import { ApolloServer } from 'apollo-server';
 (async () => {
   initRepository();
 
-  const resolvers = getResolvers();
-  const schema = await buildSchema({ resolvers });
+  const schema = await buildSchema({ resolvers: getResolvers() });
   const server = new ApolloServer({ schema, playground: true });
 
-  server.listen(3000).then(() => {
-    console.log('apollo');
-  });
+  await server.listen(3000);
+  console.log('apollo');
+  
 })();

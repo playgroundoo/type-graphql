@@ -1,4 +1,4 @@
-import { Entity, PrimaryColumn, Column, ManyToOne } from 'typeorm';
+import { Entity, PrimaryColumn, Column, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
 import { ObjectType, Field, ID } from 'type-graphql';
 import { Image } from './image';
 
@@ -6,7 +6,7 @@ import { Image } from './image';
 @ObjectType()
 export class ImageSource {
   
-  @PrimaryColumn()
+  @PrimaryGeneratedColumn()
   @Field(type => ID)
   public id: number;
 

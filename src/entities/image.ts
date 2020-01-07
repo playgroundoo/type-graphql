@@ -1,4 +1,4 @@
-import { Entity, PrimaryColumn, Column, ManyToOne, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
+import { Entity, PrimaryColumn, Column, ManyToOne, OneToMany, PrimaryGeneratedColumn, RelationId } from 'typeorm';
 import { ObjectType, Field, ID } from 'type-graphql';
 import { Project } from './project';
 import { ImageSource } from './image-source';
@@ -14,6 +14,9 @@ export class Image {
   @Column({ comment: '이미지 url' })
   @Field()
   public url: string;
+
+  @RelationId((image: Image) => image.project)
+  public projectId: number;
 
   @ManyToOne(type => Project, project => project.images)
   @Field((type) => Project)

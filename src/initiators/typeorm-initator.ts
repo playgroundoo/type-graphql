@@ -15,6 +15,6 @@ export default () =>
       entities.Image,
       entities.ImageSource
     ],
-    synchronize: true,
-    // logging: true
+    synchronize: false,
+    logging: true
   })

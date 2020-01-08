@@ -1,13 +1,8 @@
 import setProjectLoader from './project-dataloader';
 import setImageLoader from './image-dataloader';
+import { CustomContext } from './type';
 import { MiddlewareFn, ResolverData, ArgsDictionary } from 'type-graphql';
 import { GraphQLResolveInfo } from 'graphql';
-import DataLoader from 'dataloader';
-
-type CustomContext = {
-  images: typeof DataLoader;
-  imageSources: typeof DataLoader;
-}
 
 class CustomResolverData implements ResolverData {
   root: any;
